@@ -7,7 +7,7 @@ export interface PaginationMeta {
     hasPrev:    boolean;
   }
   
-  export class ApiResponse<T> {
+ class ApiResponse<T> {
     public readonly success: boolean;
     public readonly statusCode: number;
     public readonly message: string;
@@ -27,3 +27,5 @@ export interface PaginationMeta {
       if (pagination) this.pagination = pagination;
     }
   }
+
+  export default ApiResponse
