@@ -1,9 +1,9 @@
-import ApiError from "@/app/utils/ApiError"
+import ApiError from "../../utils/ApiError"
 import User, { IUser } from "../user/User.model"
 import { Response } from "express";
 import { authRepository } from "./auth.repository"
 import bcrypt from "bcryptjs";
-import { clearRefreshCookie, issueTokenPair, verifyRefreshToken } from "@/app/utils/jwtToken";
+import { clearRefreshCookie, issueTokenPair, verifyRefreshToken } from "../../utils/jwtToken";
 export const authService = {
     async register(data: {
         name: string,

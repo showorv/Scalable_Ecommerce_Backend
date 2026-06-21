@@ -1,6 +1,8 @@
-import ApiError from "@/app/utils/ApiError";
-import { TokenPayload } from "@/app/utils/jwtToken";
+
+
 import { Request, Response, NextFunction } from "express";
+import ApiError from "../app/utils/ApiError";
+import { TokenPayload } from "../app/utils/jwtToken";
 
 
 type Role = "user" | "admin";

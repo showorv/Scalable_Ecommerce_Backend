@@ -5,10 +5,10 @@ import { authService,  } from "./auth.service";
 import { registerSchema, loginSchema } from "./auth.validator";
 
 
-import asyncHandler from "@/app/utils/AsyncHandler";
+import asyncHandler from "../../utils/AsyncHandler";
 import { IUser } from "../user/User.model";
-import { issueTokenPair } from "@/app/utils/jwtToken";
-import { envVars } from "@/app/config/env";
+import { issueTokenPair } from "../../utils/jwtToken";
+import { envVars } from "../../config/env";
 
 // ─── Register ─────────────────────────────────────────────────────────────────
 

@@ -8,6 +8,7 @@ import mongoSanitize from "express-mongo-sanitize";
 import compression from "compression";
 import rateLimit from "express-rate-limit";
 import errorHandler from "./middlewares/GlobalError";
+import { router } from "./app/routers";
 
 
 const app: Application = express();
@@ -62,7 +63,7 @@ app.get("/health", (_req: Request, res: Response) => {
 // ── API routes (registered here as modules are built) ────────────────────────
 // import authRoutes    from "./modules/auth/auth.routes";
 // import productRoutes from "./modules/product/product.routes";
-// app.use("/api/v1/auth",    authRoutes);
+app.use("/api/v1", router);
 // app.use("/api/v1/products", productRoutes);
 // ... add more as you build each module
 

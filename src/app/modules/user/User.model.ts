@@ -22,8 +22,8 @@ const userSchema = new Schema<IUser>(
   {
     name:         { type: String, required: true, trim: true, maxlength: 80 },
     email:        { type: String, required: true, unique: true, lowercase: true, trim: true },
-    passwordHash: { type: String, select: false },
-    googleId:     { type: String, sparse: true },
+    passwordHash: { type: String, select: false }, // for security not returned in queries thats why false
+    googleId:     { type: String, sparse: true }, // sparse means can be null but when have any value it should be unique
     avatar:       { type: String },
     role:         { type: String, enum: ["user", "admin"], default: "user" },
     isBlocked:    { type: Boolean, default: false },
@@ -34,9 +34,9 @@ const userSchema = new Schema<IUser>(
 
 
 userSchema.index({ email: 1 });
-userSchema.index({ googleId: 1 }, { sparse: true });
+userSchema.index({ googleId: 1 }, { sparse: true }); //sparse true because it works when has any value
 
-
+ 
 userSchema.pre("save", async function (next) {
   if (!this.isModified("passwordHash") || !this.passwordHash) return next();
   this.passwordHash = await bcrypt.hash(this.passwordHash, 12);

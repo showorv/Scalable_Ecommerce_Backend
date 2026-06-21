@@ -1,7 +1,8 @@
-import { authRepository } from "@/app/modules/auth/auth.repository";
-import ApiError from "@/app/utils/ApiError";
-import { verifyAccessToken } from "@/app/utils/jwtToken";
+
 import { Request, Response, NextFunction } from "express";
+import ApiError from "../app/utils/ApiError";
+import { verifyAccessToken } from "../app/utils/jwtToken";
+import { authRepository } from "../app/modules/auth/auth.repository";
 
 
 // Extend Express Request type to carry auth context

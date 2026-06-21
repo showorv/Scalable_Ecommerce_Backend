@@ -1,5 +1,5 @@
-import { envVars } from "@/app/config/env";
-import ApiError from "@/app/utils/ApiError";
+import { envVars } from "../config/env";
+import ApiError from "../utils/ApiError";
 import jwt, { SignOptions } from "jsonwebtoken"
 import { Response } from "express";
 import { IUser } from "../modules/user/User.model";
